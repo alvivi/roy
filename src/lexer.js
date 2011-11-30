@@ -21,19 +21,20 @@ var identifierToken = function() {
         case 'false':
             name = 'BOOLEAN';
             break;
-        case 'let':
+        case 'bind':
+        case 'case':
+        case 'data':
+        case 'do':
+        case 'else':
+        case 'extern':
         case 'fn':
         case 'if':
-        case 'then':
-        case 'else':
-        case 'data':
-        case 'type':
-        case 'match':
-        case 'case':
-        case 'do':
-        case 'bind':
-        case 'return':
+        case 'let':
         case 'macro':
+        case 'match':
+        case 'return':
+        case 'then':
+        case 'type':
         case 'with':
             name = value.toUpperCase();
             break;

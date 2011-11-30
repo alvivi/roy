@@ -445,6 +445,11 @@ var analyse = function(node, env, nonGeneric) {
             aliases[node.name].aliased = node.name;
             return new t.NativeType();
         },
+        visitExtern: function() {
+            var valueType = nodeToType(node.type, env);
+            env[node.name] = valueType;
+            return valueType;
+        },
         // #### Identifier
         //
         // Creates a `fresh` copy of a type if the name is found in an

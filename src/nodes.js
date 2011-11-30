@@ -234,6 +234,16 @@ exports.nodes = {
             }
         };
     },
+    Extern: function(name, type) {
+        this.name = name;
+        this.type = type;
+
+        this.accept = function(a) {
+            if(a.visitExtern) {
+                return a.visitExtern(this);
+            }
+        }
+    },
     With: function(left, right) {
         this.left = left;
         this.right = right;

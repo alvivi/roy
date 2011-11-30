@@ -1,0 +1,6 @@
+// This example must be executed with node instead of roy -r, otherwise
+// __filename will be undefined.
+
+extern __filename = String
+
+console.log "Hi! My name is " ++ __filename

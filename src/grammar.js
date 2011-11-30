@@ -49,6 +49,7 @@ var grammar = {
             ["letBinding", "$$ = $1;"],
             ["dataDecl", "$$ = $1;"],
             ["typeDecl", "$$ = $1;"],
+            ["externDecl", "$$ = $1;"],
             ["macro", "$$ = $1;"]
         ],
         "expression": [
@@ -133,6 +134,10 @@ var grammar = {
             ["", "$$ = {};"],
             ["keywordOrIdentifier : type", "$$ = {}; $$[$1] = $3;"],
             ["optTypePairs , keywordOrIdentifier : type", "$$ = $1; $1[$3] = $5;"]
+        ],
+
+        "externDecl": [
+            ["EXTERN IDENTIFIER = type", "$$ = new yy.Extern($2, $4);"]
         ],
 
         "macro": [
